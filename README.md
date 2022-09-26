@@ -1,0 +1,1 @@
+Principal presentation of my first project to git path of Kommit
