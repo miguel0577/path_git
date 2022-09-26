@@ -1,0 +1,83 @@
+git init: inicializar el repositorio
+git add nombre_de_archivo.extensión: agregar el archivo al repositorio
+git add .: Agregar los cambios de la carpeta en la que nos encontramos agregar todo
+git commit -m “Mensaje”: Agregamos los cambios para el repositorio
+git status: visualizar cambios
+git show archivo.extensión: muestra los cambios realizados en el archivo en cada commit
+git log nombre_de_archivos.extensión: histórico de cambios con detalles
+git push: envía a otro repositorio remoto lo que estamos haciendo
+git pull: traer repositorio remoto
+__________________________________________________________________________________________________________
+
+git branch: Con este comando se muestran las ramas creadas.
+git branch -nombre de la rama-: Con este comando se genera una nueva rama.
+git checkout -nombre de la rama-: Con este comando puedes saltar de una rama a otra.
+git checkout -: Con este comando salta a la ultima rama en la que ha estado.
+git checkout -b rama: Genera una rama y nos mueve a ella automáticamente, Es decir, es la combinación de git brach y git checkout al mismo tiempo.
+git reset id-commit: Nos lleva a cualquier commit no importa la rama, ya que identificamos el id del tag., eliminando el historial de los commit posteriores al tag seleccionado.
+git checkout rama-o-id-commit: Nos lleva a cualquier commit sin borrar los commit posteriores al tag seleccionado.
+git checkout: traer cambios realizados
+git rm --cached archivo.extensión: se utiliza para devolver el archivo que se tiene en ram. Cuando escribimos git add, lo devuelve a estado natural mientras está en staging.
+git config --list: muestra la lista de configuración de git
+git config --list --show-origin: rutas de acceso a la configuración de git
+git log archivo.extensión: muestra la historia del archivo
+git diff xversion xversion : realiza la comparacion entre dos versiones del documento
+
+__________________________________________________________________________________________________________
+git remote set-url origin url-ssh-del-repositorio-en-github: Ahora podemos actualizar la URL que guardamos en nuestro repositorio remoto, solo que, en vez de guardar la URL con HTTPS, vamos a usar la URL con SSH
+
+git rm --cached: Elimina los archivos de nuestro repositorio local y del área de staging, pero los mantiene en nuestro disco duro. 
+Básicamente le dice a Git que deje de trackear el historial de cambios de estos archivos, por lo que pasaran a un estado untracked.
+
+git rm --force: Elimina los archivos de Git y del disco duro. Git siempre guarda todo, por lo que podemos acceder al registro de la existencia de los archivos, 
+de modo que podremos recuperarlos si es necesario (pero debemos usar comandos más avanzados).
+
+git reset --soft: Borramos todo el historial y los registros de Git pero guardamos los cambios que tengamos en Staging,
+así podemos aplicar las últimas actualizaciones a un nuevo commit.
+
+git reset --hard: Borra todo. Todo todito, absolutamente todo. Toda la información de los commits y del área de staging se borra del historial.
+
+git reset HEAD: Este es el comando para sacar archivos del área de staging. No para borrarlos ni nada de eso, solo para que los últimos cambios de estos 
+archivos no se envíen al último commit, a menos que cambiemos de opinión y los incluyamos de nuevo en staging con git add, por supuesto.
+__________________________________________________________________________________________________________
+
+Buscar
+
+Para buscar, empleamos el comando git grep color y nos buscará en todo el proyecto los archivos en donde está la palabra color.
+
+Con git grep -n color nos saldrá un output el cual nos dirá en qué línea está lo que estamos buscando.
+Con git grep -c color nos saldrá un output el cual nos dirá cuántas veces se repite esa palabra y en qué archivo.
+Si queremos buscar cuántas veces utilizamos un atributo de HTML lo hacemos con git grep -c "<p>".
+__________________________________________________________________________________________________________
+
+Comandos colaborativos para facilitar el trabajo remoto en GitHub:
+
+git shortlog -sn: muestra cuantos commit han hecho cada miembro del equipo.
+git shortlog -sn --all: muestra cuantos commit han hecho cada miembro del equipo, hasta los que han sido eliminados.
+git shortlog -sn --all --no-merge: muestra cuantos commit ha hecho cada miembro, quitando los eliminados sin los merges.
+git blame ARCHIVO: muestra quien hizo cada cosa línea por línea.
+git COMANDO --help:muestra como funciona el comando.
+git blame ARCHIVO -Llinea_inicial,linea_final: muestra quien hizo cada cosa línea por línea, indicándole desde qué línea ver. Ejemplo -L35,50.
+git branch -r: se muestran todas las ramas remotas.
+git branch -a: se muestran todas las ramas, tanto locales como remotas.
+__________________________________________________________________________________________________________
+
+git rebase
+git reset
+git reflog
+git commit --amend: remendar commit anterior
+git cherry-pick: Son malas practicas pero funcionan para corregir errores forzosamente
+__________________________________________________________________________________________________________
+
+.gitignore: Es un archivo en el que se agregan todas las rutas de los archivos que no se quieren subir a GitHub
+__________________________________________________________________________________________________________
+Comandos de consola
+ls: listado de carpetas en donde me encuentro. Es decir, como emplear dir en windows.
+pwd: ubicación actual
+mkdir: make directory nueva carpeta
+touch archivo.extensión: crear archivo vacío
+cat archivo.extensión: muestra el contenido del archivo
+history: historial de comandos utilizados durante esa sesión
+rm archivo.extensión: Eliminación de archivo
+comando --help: ayuda sobre el comando
+
